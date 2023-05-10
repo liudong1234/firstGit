@@ -78,9 +78,63 @@ git reflog
 git reset --hard 版本号
 ```
 
-7.撤销对工作区的修改（未commit到仓库的部分）
+#### 7.撤销对工作区的修改（未commit到仓库的部分）
 
 ```cmd
-git checkout --readme.txt
+git checkout -- readme.txt
 ```
+
+#### 8.删除一个文件
+
+```cmd
+rm readme.txt
+```
+
+在没有commit之前，文件是可以恢复的，采用 
+
+```cmd
+git checkout -- readme.txt
+```
+
+### 三、远程仓库
+
+#### 1.创建SSH key
+
+```cmd
+ssh-keygen -t rsa –C "youremail@example.com"
+```
+
+在此命令下，可以生成一个私钥和一个公钥，将公钥文件以记事本打开，复制文本到github
+
+#### 2.进入github
+
+```txt
+找到ssh and GPG keys,点击New SSH key 将复制的公钥粘贴进去，创建，，，
+```
+
+#### 3.创建一个仓库
+
+```text
+我们根据GitHub的提示，在本地的testgit仓库下运行命令：
+```
+
+```cmd
+git remote add origin https://github.com/liudong1234/firstGit.git
+```
+
+#### 4.将本地仓库上传及连接
+
+把当前分支master推送的远程
+
+```cmd
+git push -u origin master
+```
+
+从现在起，只要本地作了提交，就可以通过一下命令
+
+```cmd
+git push origin master
+```
+
+把本地master分支的最新修改推送到github上了
 
