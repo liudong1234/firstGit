@@ -78,4 +78,9 @@ git reflog
 git reset --hard 版本号
 ```
 
-7
+7.撤销对工作区的修改（未commit到仓库的部分）
+
+```cmd
+git checkout --readme.txt
+```
+
