@@ -90,7 +90,7 @@ git checkout -- readme.txt
 rm readme.txt
 ```
 
-在没有commit之前，文件是可以恢复的，采用 
+在没有commit之前，文件是可以恢复的，采用
 
 ```cmd
 git checkout -- readme.txt
@@ -137,4 +137,50 @@ git push origin master
 ```
 
 把本地master分支的最新修改推送到github上了
+
+#### 5.将远程仓库克隆到本地
+
+```cmd
+git clone 链接
+```
+
+### 四、创建与合并分支
+
+#### 1.创建dev分支
+
+```cmd
+git checkout -b dev
+```
+
+git checkout 命令加上 –b参数表示创建并切换，相当于如下2条命令
+
+git branch dev
+
+git checkout dev
+
+#### 2.查看当前分支
+
+```cmd
+git branch
+```
+
+#### 3.切换到master分支
+
+```cmd
+git checkout master
+```
+
+#### 4.合并分支
+
+```cmd
+git merge dev
+```
+
+#### 5.删除dev分支
+
+```cmd
+git branch -d dev
+```
+
+
 
