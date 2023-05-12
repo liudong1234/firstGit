@@ -182,5 +182,36 @@ git merge dev
 git branch -d dev
 ```
 
+#### 6.隐藏现场
 
+将当前现场隐藏起来，以便于做其他工作，而不用将当前内容commit
 
+```cmd
+git stash
+```
+
+工作现场还在，Git把stash内容存在某个地方了，但是需要恢复一下，可以使用如下2个方法：
+
+- 恢复
+
+```cmd
+git stash apply
+```
+
+恢复后，stash内容并不删除，你需要使用命令删除
+
+```cmd
+git stash drop
+```
+
+- 恢复的同时把stash内容也删除了。
+
+```cmd
+git stash pop
+```
+
+#### 五、多人协作模式
+
+首先，可以试图用git push origin branch-name推送自己的修改.
+如果推送失败，则因为远程分支比你的本地更新早，需要先用git pull试图合并。
+如果合并有冲突，则需要解决冲突，并在本地提交。再用git push origin branch-name推送。
